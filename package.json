@@ -1,0 +1,26 @@
+{
+  "name": "skyspark-express-connector",
+  "version": "1.0.0",
+  "description": "Express server that can talk to implementation of skyspark",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "client":"npm run serve --prefix client",
+    "fullstack":"concurrently \"npm run dev\" \"npm run client\""
+  },
+  "dependencies": {
+    "@skyfoundry/haystack-auth": "^1.0.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.9"
+  },
+  "author": "Tyler Gregg",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
