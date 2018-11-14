@@ -14,7 +14,7 @@
           <label class="active" for="username">Username</label>
         </div>
         <div class="input-field">
-          <input  :value="pw" @input="pwOnChange" id="password" type="text" class="validate">
+          <input  :value="pw" @input="pwOnChange" id="password" type="password" class="validate">
           <label class="active" for="password">Password</label>
         </div>
         <div class="input-field">
@@ -23,8 +23,9 @@
         </div>
         <p>{{ auth }}</p>
         </div>
-        <div class="card-action">
+        <div class="card-action button-spread">
           <button @click='getAuth' class="waves-effect waves-light btn">Submit</button>
+          <button @click='goToCall' v-bind:class="[auth==='' ? 'btn-flat disabled':'waves-effect waves-light btn']">Write Calls</button>
         </div>
       </div>
     </div>
@@ -54,8 +55,10 @@ export default {
       'hostInput',
       'authInput'
     ]),
-    goAbout() {
-      router.push({ name: "about" });
+    goToCall() {
+      if(this.auth!=''){
+      router.push({ name: "call" });
+      }
     },
     userOnChange(e) {
       this.userInput(e.target.value);
@@ -79,6 +82,10 @@ export default {
 <style scoped>
 .title-text {
   font-weight: 600;
+}
+.button-spread {
+  display:flex;
+  justify-content: space-between;
 }
 </style>
 

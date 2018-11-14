@@ -64,7 +64,7 @@ export default {
   computed: {
     ...mapGetters(["host", "auth", "query"]),
     axon() {
-      let val = this.query.replace(/\s/g, "");
+      let val = this.query.replace(/\s/g, "%20");
       return val.replace(/(\r\n\t|\n|\r\t)/gm, "");
     },
     queryAuth() {
